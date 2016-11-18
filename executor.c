@@ -21,15 +21,16 @@ int main() {
 	}
 	//seems fine
 
-	char* actualArgs[i];
+	char* actualArgs[i + 1];
 	int j = 0;
 	for(; j < i; j++)
 	{
 		actualArgs[j] = args[j];
 		printf("%s\n", actualArgs[j]);
 	}
+	actualArgs[i] = NULL;
 
-	execvp(actualArgs[0], &actualArgs[0]);
+	execvp(actualArgs[0], actualArgs);
 
 
 	return 0;
