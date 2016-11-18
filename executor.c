@@ -17,16 +17,19 @@ int main() {
 	while(i < 10 && command - originalCommand <= strlen)
 	{
 		args[i] = strsep(&command, " ");
-		//printf("args[i]: %s\n", args[i]);
 		i++;
 	}
 	//seems fine
 
 	char* actualArgs[i];
 	int j = 0;
-	for(; j < i; j++) actualArgs[j] = args[j];
+	for(; j < i; j++)
+	{
+		actualArgs[j] = args[j];
+		printf("%s\n", actualArgs[j]);
+	}
 
-	execvp(actualArgs[0], &actualArgs[1]);
+	execvp(actualArgs[0], &actualArgs[0]);
 
 
 	return 0;
