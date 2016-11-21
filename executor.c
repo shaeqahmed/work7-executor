@@ -30,14 +30,13 @@ int main() {
 		args[i] = strsep(&command, " ");
 		i++;
 	}
-	//seems fine
 
 	char* actualArgs[i + 1];
 	int j = 0;
 	for(; j < i; j++)
 	{
 		actualArgs[j] = args[j];
-		printf("%s\n", actualArgs[j]);
+		//printf("%s\n", actualArgs[j]);
 	}
 	actualArgs[i] = NULL;
 
